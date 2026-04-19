@@ -6,21 +6,20 @@ export default function Footer() {
             <div className="footer-content">
                 <div className="footer-section brand-section">
                     <h2>BAAGH <span>ENTERTAINMENT</span></h2>
-                    <p>Powering Productions. Delivering Excellence across India.</p>
+                    <p>Baagh Entertainment Stories That Roar.</p>
                 </div>
                 <div className="footer-section links-section">
                     <h3>Quick Links</h3>
                     <Link href="/about">About Us</Link>
                     <Link href="/services">Services</Link>
                     <Link href="/portfolio">Portfolio</Link>
-                    <Link href="/blog">News & Updates</Link>
                     <Link href="/contact">Contact</Link>
                 </div>
                 <div className="footer-section contact-section">
                     <h3>Location</h3>
-                    <p>Mumbai, India</p>
-                    <p>Email: contact@baaghentertainment.com</p>
-                    <p>Phone: +91 98765 43210</p>
+                    <p>Ward No. 12 Garra Chowk near toll plaza garra Balaghat - 481001</p>
+                    <p>Email: Baaghentertainment@gmail.com</p>
+                    <p>Phone: +91 9244831011</p>
                 </div>
             </div>
             <div className="footer-bottom">

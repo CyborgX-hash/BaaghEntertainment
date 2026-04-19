@@ -3,18 +3,18 @@ import styles from './Home.module.css';
 
 export default function Home() {
     const services = [
-        { title: 'Line Production', desc: 'Comprehensive budgeting, scheduling, and on-ground management for seamless shoots.', image: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=1456&auto=format&fit=crop' },
-        { title: 'Location Management', desc: 'Scouting and securing elite locations across India with required permits.', image: 'https://images.unsplash.com/photo-1533502931221-a3f2d019f635?q=80&w=1471&auto=format&fit=crop' },
-        { title: 'Casting Coordination', desc: 'Arranging junior artists, extras, and specialized talents for any scale of production.', image: 'https://images.unsplash.com/photo-1563223771-46bb6f2a8def?q=80&w=1500&auto=format&fit=crop' },
-        { title: 'Vanity Vans & Vehicles', desc: 'Premium vanity vans and logistics transport for cast, crew, and equipment.', image: 'https://images.unsplash.com/photo-1582236372132-72304d9c7553?q=80&w=1400&auto=format&fit=crop' },
-        { title: 'Equipment Logistics', desc: 'Sourcing and transporting top-tier camera, lighting, and grip equipment.', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1400&auto=format&fit=crop' },
-        { title: 'Shooting Permissions', desc: 'Fast-track government and local authority approvals across all states.', image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=1500&auto=format&fit=crop' },
+        { title: 'Line Production', desc: 'Comprehensive budgeting, scheduling, and on-ground management for seamless shoots.', image: 'images/Poster.png' },
+        { title: 'Location Management', desc: 'Scouting and securing elite locations across India with required permits.', image: 'images/Locations.png' },
+        { title: 'Casting Coordination', desc: 'Arranging junior artists, extras, and specialized talents for any scale of production.', image: 'images/Casting.webp' },
+        { title: 'Vanity Vans & Vehicles', desc: 'Premium vanity vans and logistics transport for cast, crew, and equipment.', image: 'images/Vanity.png' },
+        { title: 'Equipment Logistics', desc: 'Sourcing and transporting top-tier camera, lighting, and grip equipment.', image: 'images/Logistic.jpeg' },
+        { title: 'Shooting Permissions', desc: 'Fast-track government and local authority approvals across all states.', image: 'images/Permisssion.jpeg' },
     ];
 
     const stats = [
-        { number: '500+', label: 'Projects Completed' },
-        { number: '50+', label: 'Cities Covered' },
-        { number: '15+', label: 'Years Experience' },
+        { number: '3', label: 'Projects Completed' },
+        { number: '33+', label: 'Cities Covered' },
+        { number: '2+', label: 'Years Experience' },
         { number: '24/7', label: 'Production Support' },
     ];
 
@@ -27,14 +27,14 @@ export default function Home() {
                     muted
                     playsInline
                     className={styles.heroBackground}
-                    poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    poster= "images/Poster.png"
                 >
                     <source src="https://cdn.pixabay.com/video/2021/08/25/86241-592750838_tiny.mp4" type="video/mp4" />
                 </video>
                 <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContent}>
-                    <h1>POWERING PRODUCTIONS. <br /><span style={{ color: 'var(--color-accent)' }}>DELIVERING EXCELLENCE.</span></h1>
-                    <p>Complete Film Production Support Across India. Your trusted partner for feature films, web series, commercials, and OTT projects.</p>
+                    <h1>BAAGH ENTERTAINMENT<br /><span style={{ color: 'var(--color-accent)' }}>STORIES THAT ROAR</span></h1>
+                    {/* <p>Complete Film Production Support Across India. Your trusted partner for feature films, web series, commercials, and OTT projects.</p> */}
                     <div className={styles.heroButtons}>
                         <Link href="/services" className="btn-primary" style={{ display: 'inline-block' }}>Explore Services</Link>
                         <Link href="/contact" className="btn-secondary" style={{ display: 'inline-block' }}>Contact Us</Link>

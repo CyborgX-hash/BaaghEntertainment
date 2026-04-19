@@ -231,6 +231,7 @@ button {
 .portfolio-card {
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1 / 1;
 }
 
 .portfolio-card:hover {
@@ -382,7 +383,7 @@ button {
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -391,7 +392,7 @@ button {
 
 .content-grid-lg {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -409,6 +410,83 @@ button {
     gap: 1.5rem;
     flex-wrap: wrap;
     align-items: center;
+}
+
+/* ======================== */
+/* Splash Screen            */
+/* ======================== */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-black);
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash-screen.splash-fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splash-logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: splashEntry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.splash-logo {
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 40px rgba(230, 0, 0, 0.3));
+    animation: splashPulse 2s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+.splash-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 0, 0, 0.15) 0%, transparent 70%);
+    animation: splashGlow 2.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes splashEntry {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes splashPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 40px rgba(230, 0, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 60px rgba(230, 0, 0, 0.5));
+    }
+}
+
+@keyframes splashGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
 }
 
 /* ======================== */

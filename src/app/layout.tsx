@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
+import SplashScreen from '@/components/SplashScreen';
 
 export const metadata: Metadata = {
     title: 'Baagh Entertainment | Film Production Support Across India',
@@ -18,9 +19,11 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <AuthProvider>
-                    <Navbar />
-                    <main>{children}</main>
-                    <Footer />
+                    <SplashScreen>
+                        <Navbar />
+                        <main>{children}</main>
+                        <Footer />
+                    </SplashScreen>
                 </AuthProvider>
             </body>
         </html>

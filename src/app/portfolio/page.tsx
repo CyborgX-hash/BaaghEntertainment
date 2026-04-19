@@ -17,11 +17,11 @@ export default async function Portfolio() {
         console.error('Failed to fetch projects from database:', error);
     }
 
-    const staticProjects = [
-        { id: '1', title: 'Panchayat', type: 'Web Series', client: 'Amazon Prime', image: '/images/gram_panchayat.png', isStatic: true },
-    ];
+    // const staticProjects = [
+    //     { id: '1', title: 'Panchayat', type: 'Web Series', client: 'Amazon Prime', image: '/images/gram_panchayat.png', isStatic: true },
+    // ];
 
-    const projects = [...staticProjects, ...dbProjects];
+    const projects = [...dbProjects];
 
     return (
         <div className="page-container" style={{ backgroundColor: 'var(--color-black)' }}>
@@ -35,7 +35,7 @@ export default async function Portfolio() {
                     {projects.map((proj: any) => (
                         <div key={proj.id} className="portfolio-card" style={{ position: 'relative', overflow: 'hidden', borderRadius: '4px', cursor: 'pointer' }}>
                             <AdminItemControls isAdmin={isAdmin} id={proj.id} type="project" isStatic={proj.isStatic} />
-                            <img src={proj.image} alt={proj.title} style={{ width: '100%', height: '300px', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }} className="portfolio-img" />
+                            <img src={proj.image} alt={proj.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }} className="portfolio-img" />
                             <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '2rem', background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)', textAlign: 'left' }}>
                                 <p style={{ color: 'var(--color-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '1px', marginBottom: '0.5rem' }}>{proj.type} &bull; {proj.client}</p>
                                 <h3 style={{ fontSize: '1.8rem', color: 'var(--color-white)' }}>{proj.title}</h3>

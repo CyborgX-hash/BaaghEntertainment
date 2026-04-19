@@ -41,12 +41,12 @@ export default function Contact() {
                             Fill out the form and a production coordinator will contact you within 24 hours.
                         </p>
                         <div style={{ marginBottom: '2rem' }}>
-                            <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Headquarters</h3>
-                            <p style={{ color: 'var(--color-gray-text)' }}>104, Cinematic Tower, Andheri West<br />Mumbai, Maharashtra 400053<br />India</p>
+                            <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Address</h3>
+                            <p style={{ color: 'var(--color-gray-text)' }}>Ward No. 12 Garra Chowk near toll plaza garra Balaghat - 481001<br />India</p>
                         </div>
                         <div>
                             <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Direct Contact</h3>
-                            <p style={{ color: 'var(--color-gray-text)' }}>Email: contact@baaghentertainment.com<br />Phone: +91 98765 43210</p>
+                            <p style={{ color: 'var(--color-gray-text)' }}>Email: Baaghentertainment@gmail.com<br />Phone: +91 9244831011</p>
                         </div>
                     </div>
 
