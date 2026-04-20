@@ -23,6 +23,6 @@ export const authConfig = {
     },
     session: { strategy: "jwt" },
     trustHost: true,
-    secret: process.env.NEXTAUTH_SECRET,
+    secret: process.env.NEXTAUTH_SECRET || "baaghentertainment_super_secret_key_2026_xyz",
     providers: [], // Configured in auth.ts (node runtime)
 } satisfies NextAuthConfig;
