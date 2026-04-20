@@ -10,7 +10,14 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
     const [splashDone, setSplashDone] = useState(false);
 
     useEffect(() => {
-        const hasSeenSplash = sessionStorage.getItem('baagh_splash_shown');
+        let hasSeenSplash = false;
+
+        try {
+            hasSeenSplash = sessionStorage.getItem('baagh_splash_shown') === 'true';
+        } catch {
+            // sessionStorage may be unavailable in some environments
+            hasSeenSplash = true;
+        }
 
         if (hasSeenSplash) {
             // Already seen — skip splash immediately
@@ -28,7 +35,11 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
         const removeTimer = setTimeout(() => {
             setShowSplash(false);
             setSplashDone(true);
-            sessionStorage.setItem('baagh_splash_shown', 'true');
+            try {
+                sessionStorage.setItem('baagh_splash_shown', 'true');
+            } catch {
+                // Ignore if sessionStorage is unavailable
+            }
         }, 5300);
 
         return () => {
@@ -36,6 +47,18 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
             clearTimeout(removeTimer);
         };
     }, []);
+
+    // Fallback: if splash is still blocking after 7 seconds, force show content
+    useEffect(() => {
+        if (splashDone) return;
+
+        const fallback = setTimeout(() => {
+            setShowSplash(false);
+            setSplashDone(true);
+        }, 7000);
+
+        return () => clearTimeout(fallback);
+    }, [splashDone]);
 
     return (
         <>

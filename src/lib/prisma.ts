@@ -1,20 +1,12 @@
 import { PrismaClient } from '@prisma/client';
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import { PrismaNeon } from '@prisma/adapter-neon';
+import { withAccelerate } from '@prisma/extension-accelerate';
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+const globalForPrisma = global as unknown as { prisma: ReturnType<typeof createPrismaClient> };
 
 function createPrismaClient() {
-    if (!process.env.DATABASE_URL) {
-        console.warn("DATABASE_URL is not defined in the environment.");
-    }
-    
-    // Create a serverless Neon connection pool
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    const adapter = new PrismaNeon(pool);
-    
-    // Create the Prisma Client using the driver adapter
-    return new PrismaClient({ adapter, log: ['error', 'warn'] });
+    return new PrismaClient({
+        log: ['error', 'warn'],
+    }).$extends(withAccelerate());
 }
 
 export const prisma = globalForPrisma.prisma || createPrismaClient();
